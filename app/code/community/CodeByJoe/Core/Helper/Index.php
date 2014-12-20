@@ -124,4 +124,15 @@ class CodeByJoe_Core_Helper_Index extends Mage_Core_Helper_Abstract
         
         return $this;
     }
+
+    /**
+     * @return $this
+     * @author Joseph McDermott <code@josephmcdermott.co.uk>
+     */
+    public function synchronizeFlatTables()
+    {
+        Mage::getResourceModel('catalog/category_flat')->synchronize();
+        
+        return $this;
+    }
 }
