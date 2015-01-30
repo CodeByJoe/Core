@@ -1,0 +1,25 @@
+{
+    "name": "codebyjoe/core",
+    "type": "magento-module",
+    "description": "Core utilities by CodeByJoe Ltd",
+    "license": ["proprietary"],
+    "authors": [
+        {
+            "name": "Joseph McDermott",
+            "email": "contact@josephmcdermott.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "extra": {
+        "map": [
+            [
+                "app/code/community/CodeByJoe/Core",
+                "app/code/community/CodeByJoe/Core"
+            ],
+            [
+                "app/etc/modules/CodeByJoe_core.xml",
+                "app/etc/modules/CodeByJoe_core.xml"
+            ]
+        ]
+    }
+}
