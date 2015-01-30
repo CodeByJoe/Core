@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <codebyjoe translate="label" module="codebyjoe_core">
+            <label>CodeByJoe Ltd</label>
+            <sort_order>100</sort_order>
+        </codebyjoe>
+    </tabs>
+</config>
