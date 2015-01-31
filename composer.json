@@ -17,8 +17,8 @@
                 "app/code/community/CodeByJoe/Core"
             ],
             [
-                "app/etc/modules/CodeByJoe_core.xml",
-                "app/etc/modules/CodeByJoe_core.xml"
+                "app/etc/modules/CodeByJoe_Core.xml",
+                "app/etc/modules/CodeByJoe_Core.xml"
             ]
         ]
     }

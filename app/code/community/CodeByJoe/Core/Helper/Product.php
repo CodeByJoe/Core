@@ -32,4 +32,9 @@ class CodeByJoe_Core_Helper_Product extends Mage_Core_Helper_Abstract
 
         return $productModel;
     }
+
+    /**
+     * @todo
+     * getAttributeText()
+     */
 }
