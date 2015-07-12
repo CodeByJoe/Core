@@ -1,5 +1,5 @@
 {
-    "name": "codebyjoe/core",
+    "name": "codebyjoe/magento-core",
     "type": "magento-module",
     "description": "Core utilities by CodeByJoe Ltd",
     "license": ["proprietary"],
