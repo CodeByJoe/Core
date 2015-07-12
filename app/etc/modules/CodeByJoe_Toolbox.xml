@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <CodeByJoe_Core>
+        <CodeByJoe_Toolbox>
             <active>true</active>
             <codePool>community</codePool>
-        </CodeByJoe_Core>
+        </CodeByJoe_Toolbox>
     </modules>
 </config>

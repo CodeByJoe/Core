@@ -1,25 +1,25 @@
 {
-    "name": "codebyjoe/magento-core",
-    "type": "magento-module",
-    "description": "Core utilities by CodeByJoe Ltd",
-    "license": ["proprietary"],
-    "authors": [
-        {
-            "name": "Joseph McDermott",
-            "email": "contact@josephmcdermott.co.uk",
-            "role": "Developer"
-        }
-    ],
-    "extra": {
-        "map": [
-            [
-                "app/code/community/CodeByJoe/Core",
-                "app/code/community/CodeByJoe/Core"
-            ],
-            [
-                "app/etc/modules/CodeByJoe_Core.xml",
-                "app/etc/modules/CodeByJoe_Core.xml"
-            ]
-        ]
+  "name": "codebyjoe/magento-toolbox",
+  "type": "magento-module",
+  "description": "Core utility toolbox from CodeByJoe Ltd",
+  "license": ["MIT"],
+  "authors": [
+    {
+      "name": "Joseph McDermott",
+      "email": "code@josephmcdermott.co.uk",
+      "role": "Magento Consultant & Developer"
     }
+  ],
+  "extra": {
+    "map": [
+      [
+        "app/code/community/CodeByJoe/Toolbox",
+        "app/code/community/CodeByJoe/Toolbox"
+      ],
+      [
+        "app/etc/modules/CodeByJoe_Toolbox.xml",
+        "app/etc/modules/CodeByJoe_Toolbox.xml"
+      ]
+    ]
+  }
 }

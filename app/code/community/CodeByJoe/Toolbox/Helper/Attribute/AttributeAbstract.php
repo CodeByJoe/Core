@@ -3,11 +3,11 @@
  * CodeByJoe Ltd :: http://www.codebyjoe.com
  *
  * @category CodeByJoe
- * @package CodeByJoe_Core
+ * @package CodeByJoe_Toolbox
  * @author Joseph McDermott <code@josephmcdermott.co.uk>
  * @license http://choosealicense.com/licenses/mit/ MIT License
  */
-abstract class CodeByJoe_Core_Helper_Attribute_AttributeAbstract extends Mage_Core_Helper_Abstract
+abstract class CodeByJoe_Toolbox_Helper_Attribute_AttributeAbstract extends Mage_Core_Helper_Abstract
 {
     const TYPE_YESNO = 'yesno';
     const TYPE_SELECT = 'select';

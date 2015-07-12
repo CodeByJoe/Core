@@ -3,11 +3,11 @@
  * CodeByJoe Ltd :: http://www.codebyjoe.com
  *
  * @category CodeByJoe
- * @package CodeByJoe_Core
+ * @package CodeByJoe_Toolbox
  * @author Joseph McDermott <code@josephmcdermott.co.uk>
  * @license http://choosealicense.com/licenses/mit/ MIT License
  */
-class CodeByJoe_Core_Helper_Config extends Mage_Core_Helper_Abstract
+class CodeByJoe_Toolbox_Helper_Config extends Mage_Core_Helper_Abstract
 {
     const SCOPE_DEFAULT = 'default';
     const SCOPE_WEBSITE = 'websites';

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <CodeByJoe_Toolbox>
+            <version>0.1.0</version>
+        </CodeByJoe_Toolbox>
+    </modules>
+    <global>
+        <helpers>
+            <codebyjoe_toolbox>
+                <class>CodeByJoe_Toolbox_Helper</class>
+            </codebyjoe_toolbox>
+        </helpers>
+    </global>
+</config>

@@ -3,11 +3,11 @@
  * CodeByJoe Ltd :: http://www.codebyjoe.com
  *
  * @category CodeByJoe
- * @package CodeByJoe_Core
+ * @package CodeByJoe_Toolbox
  * @author Joseph McDermott <code@josephmcdermott.co.uk>
  * @license http://choosealicense.com/licenses/mit/ MIT License
  */
-class CodeByJoe_Core_Helper_Attribute_Customer extends CodeByJoe_Core_Helper_Attribute_AttributeAbstract
+class CodeByJoe_Toolbox_Helper_Attribute_Customer extends CodeByJoe_Toolbox_Helper_Attribute_AttributeAbstract
 {
     /**
      * @param int $attributeId
@@ -45,7 +45,7 @@ class CodeByJoe_Core_Helper_Attribute_Customer extends CodeByJoe_Core_Helper_Att
         $collection = Mage::getResourceModel('customer/address_attribute_collection')
             ->addFieldToFilter($identifierType, $identifier);
         if ($collection->count() > 1) {
-            throw new CodeByJoe_Core_Exception_TooManyException(
+            throw new CodeByJoe_Toolbox_Exception_TooManyException(
                 "Too many results returned for filter: {$identifierType} / {$identifier}"
             );
         }

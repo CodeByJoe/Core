@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config>
     <tabs>
-        <codebyjoe translate="label" module="codebyjoe_core">
+        <codebyjoe translate="label" module="codebyjoe_toolbox">
             <label>CodeByJoe Ltd</label>
             <sort_order>100</sort_order>
         </codebyjoe>

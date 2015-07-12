@@ -3,11 +3,11 @@
  * CodeByJoe Ltd :: http://www.codebyjoe.com
  *
  * @category CodeByJoe
- * @package CodeByJoe_Core
+ * @package CodeByJoe_Toolbox
  * @author Joseph McDermott <code@josephmcdermott.co.uk>
  * @license http://choosealicense.com/licenses/mit/ MIT License
  */
-class CodeByJoe_Core_Helper_Attribute_Product extends CodeByJoe_Core_Helper_Attribute_AttributeAbstract
+class CodeByJoe_Toolbox_Helper_Attribute_Product extends CodeByJoe_Toolbox_Helper_Attribute_AttributeAbstract
 {
     /**
      * @param int $attributeId
@@ -37,7 +37,7 @@ class CodeByJoe_Core_Helper_Attribute_Product extends CodeByJoe_Core_Helper_Attr
      * @param int|string $identifier
      * @param string $identifierType
      * @return Mage_Catalog_Model_Resource_Eav_Attribute
-     * @throws CodeByJoe_Core_Exception_Attribute_NotExist
+     * @throws CodeByJoe_Toolbox_Exception_Attribute_NotExist
      * @author Joseph McDermott <code@josephmcdermott.co.uk>
      */
     public function getAttribute($identifier, $identifierType)
@@ -45,14 +45,14 @@ class CodeByJoe_Core_Helper_Attribute_Product extends CodeByJoe_Core_Helper_Attr
         $collection = Mage::getResourceModel('catalog/product_attribute_collection')
             ->addFieldToFilter($identifierType, $identifier);
         if ($collection->count() > 1) {
-            throw new CodeByJoe_Core_Exception_TooManyException(
+            throw new CodeByJoe_Toolbox_Exception_TooManyException(
                 "Too many results returned for filter: {$identifierType} / {$identifier}"
             );
         }
 
         $attribute = $collection->getFirstItem();
         if (!$attribute instanceof Mage_Catalog_Model_Resource_Eav_Attribute || !$attribute->getId()) {
-            throw new CodeByJoe_Core_Exception_Attribute_NotExist(
+            throw new CodeByJoe_Toolbox_Exception_Attribute_NotExist(
                 "Unable to load product attribute: {$identifierType} / {$identifier}"
             );
         }
@@ -203,7 +203,7 @@ class CodeByJoe_Core_Helper_Attribute_Product extends CodeByJoe_Core_Helper_Attr
      * @param int $attributeSetId
      * @param bool $createIfNotExist
      * @return Mage_Eav_Model_Entity_Attribute_Group
-     * @throws CodeByJoe_Core_Exception_Attribute_Group_NotExistException
+     * @throws CodeByJoe_Toolbox_Exception_Attribute_Group_NotExistException
      * @throws Exception
      * @author Joseph McDermott <code@josephmcdermott.co.uk>
      */
@@ -211,7 +211,7 @@ class CodeByJoe_Core_Helper_Attribute_Product extends CodeByJoe_Core_Helper_Attr
     {
         try {
             $attributeGroup = $this->getAttributeGroup($attributeGroupName, 'attribute_group_name', $attributeSetId);
-        } catch (CodeByJoe_Core_Exception_Attribute_Group_NotExistException $e) {
+        } catch (CodeByJoe_Toolbox_Exception_Attribute_Group_NotExistException $e) {
             if (!$createIfNotExist) {
                 throw $e;
             }
@@ -227,7 +227,7 @@ class CodeByJoe_Core_Helper_Attribute_Product extends CodeByJoe_Core_Helper_Attr
      * @param string $identifierType
      * @param int $attributeSetId
      * @return Mage_Eav_Model_Entity_Attribute_Group
-     * @throws CodeByJoe_Core_Exception_Attribute_Group_NotExistException
+     * @throws CodeByJoe_Toolbox_Exception_Attribute_Group_NotExistException
      * @author Joseph McDermott <code@josephmcdermott.co.uk>
      */
     public function getAttributeGroup($identifier, $identifierType, $attributeSetId)
@@ -236,14 +236,14 @@ class CodeByJoe_Core_Helper_Attribute_Product extends CodeByJoe_Core_Helper_Attr
             ->addFieldToFilter($identifierType, $identifier)
             ->addFieldToFilter('attribute_set_id', $attributeSetId);
         if ($collection->count() > 1) {
-            throw new CodeByJoe_Core_Exception_TooManyException(
+            throw new CodeByJoe_Toolbox_Exception_TooManyException(
                 "Too many results returned for filter: {$identifierType} / {$identifier}"
             );
         }
 
         $attributeGroup = $collection->getFirstItem();
         if (!$attributeGroup instanceof Mage_Eav_Model_Entity_Attribute_Group || !$attributeGroup->getId()) {
-            throw new CodeByJoe_Core_Exception_Attribute_Group_NotExistException(
+            throw new CodeByJoe_Toolbox_Exception_Attribute_Group_NotExistException(
                 "Unable to load product attribute group: {$identifierType} / {$identifier} / {$attributeSetId}"
             );
         }
@@ -278,7 +278,7 @@ class CodeByJoe_Core_Helper_Attribute_Product extends CodeByJoe_Core_Helper_Attr
      * @param int $attributeGroupId
      * @param int $sortOrder
      * @return $this
-     * @throws CodeByJoe_Core_Exception_Attribute_NotInSetException
+     * @throws CodeByJoe_Toolbox_Exception_Attribute_NotInSetException
      * @author Joseph McDermott <code@josephmcdermott.co.uk>
      */
     public function assignAttributeToGroup($attributeId, $attributeSetId, $attributeGroupId, $sortOrder = 10)
@@ -295,7 +295,7 @@ class CodeByJoe_Core_Helper_Attribute_Product extends CodeByJoe_Core_Helper_Attr
             ->where('attribute_id = ?', $attributeId);
         $result = $connection->fetchRow($select);
         if (!$result) {
-            throw new CodeByJoe_Core_Exception_Attribute_NotInSetException(
+            throw new CodeByJoe_Toolbox_Exception_Attribute_NotInSetException(
                 "Attribute does not belong to attribute set ID: {$attributeSetId}"
             );
         }
@@ -351,11 +351,11 @@ class CodeByJoe_Core_Helper_Attribute_Product extends CodeByJoe_Core_Helper_Attr
     }
 
     /**
-     * @return CodeByJoe_Core_Model_Database
+     * @return CodeByJoe_Toolbox_Model_Database
      * @author Joseph McDermott <code@josephmcdermott.co.uk>
      */
     protected function _getDatabaseHelper()
     {
-        return Mage::getSingleton('codebyjoe_core/database');
+        return Mage::getSingleton('codebyjoe_toolbox/database');
     }
 }
